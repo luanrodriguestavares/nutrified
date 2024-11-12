@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "react-datepicker/dist/react-datepicker.css";
+
+::selection {
+    background-color: #059669;
+    color: #fff;
+}
+
+.remove-calendar-icon::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.remove-calendar-icon::-webkit-datetime-edit {
+    display: inline-block;
+}
