@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import logoEmerald from '../assets/img/logo-emerald.svg';
 import { Home, Menu, Citrus, X, Dumbbell, Banana, LogOut } from 'lucide-react';
 
@@ -7,13 +8,13 @@ export const Sidebar = () => {
 
     useEffect(() => {
         if (isOpen) {
-            document.body.style.overflow = 'hidden'; // Desativa o scroll
+            document.body.style.overflow = 'hidden'; 
         } else {
-            document.body.style.overflow = ''; // Restaura o scroll
+            document.body.style.overflow = ''; 
         }
 
         return () => {
-            document.body.style.overflow = ''; // Garante que o scroll seja restaurado ao desmontar
+            document.body.style.overflow = ''; 
         };
     }, [isOpen]);
 
@@ -56,36 +57,36 @@ export const Sidebar = () => {
                             </div>
                         </li>
                         <li>
-                            <a href="#" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-gray-700 border-l-4 border-transparent hover:border-emerald-600 pr-6">
+                            <Link to="/dashboard" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-gray-700 border-l-4 border-transparent hover:border-emerald-600 pr-6">
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <Home className="w-5 h-5" />
                                 </span>
                                 <span className="ml-2 text-sm truncate">Dashboard</span>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-gray-700 border-l-4 border-transparent hover:border-emerald-600 pr-6">
+                            <Link to="/register-meal" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-gray-700 border-l-4 border-transparent hover:border-emerald-600 pr-6">
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <Citrus className="w-5 h-5" />
                                 </span>
                                 <span className="ml-2 text-sm truncate">Adicionar Refeição</span>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-gray-700 border-l-4 border-transparent hover:border-emerald-600 pr-6">
+                            <Link to="/meals" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-gray-700 border-l-4 border-transparent hover:border-emerald-600 pr-6">
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <Banana className="w-5 h-5" />
                                 </span>
                                 <span className="ml-2 text-sm truncate">Suas Refeições</span>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-gray-700 border-l-4 border-transparent hover:border-emerald-600 pr-6">
+                            <Link to="/goals" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-gray-700 border-l-4 border-transparent hover:border-emerald-600 pr-6">
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <Dumbbell className="w-5 h-5" />
                                 </span>
                                 <span className="ml-2 text-sm truncate">Seus objetivos</span>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
