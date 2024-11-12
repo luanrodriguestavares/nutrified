@@ -30,19 +30,15 @@ export const Sidebar = () => {
     const getLinkClass = (path) => 
         `relative flex flex-row items-center h-11 focus:outline-none ${
             location.pathname === path
-                ? "bg-gray-100 text-gray-700 border-emerald-600" // estilo ativo
+                ? "bg-gray-100 text-gray-700 border-emerald-600" 
                 : "hover:bg-gray-100 text-gray-700 border-transparent"
         } border-l-4 pr-6`;
 
     return (
         <div className="flex relative">
-            <div className="p-3 absolute top-0 left-0 md:hidden z-20">
-                <button className="p-2 text-gray-500 focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? (
-                        <X className="w-6 h-6" />
-                    ) : (
-                        <Menu className="w-6 h-6" />
-                    )}
+            <div className="w-10 h-10 flex items-center justify-center top-2 left-2 md:hidden z-20 fixed bg-gray-50 rounded-full border border-gray-200 shadow-md shadow-gray-700/10">
+                <button className="text-gray-500 focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
+                    <Menu className="w-6 h-6" />
                 </button>
             </div>
 

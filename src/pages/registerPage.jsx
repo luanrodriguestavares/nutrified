@@ -75,23 +75,23 @@ export function RegisterPage() {
                                                 Selecione seu objetivo
                                             </label>
 
-                                            <div className="cursor-pointer bg-white border border-gray-300 hover:bg-emerald-500 hover:border-none text-gray-800 hover:text-white md:aspect-square rounded-lg p-2 flex items-center justify-center transition-all">
+                                            <button className="cursor-pointer bg-white border border-gray-300 hover:bg-emerald-500 hover:border-none text-gray-800 hover:text-white md:aspect-square rounded-lg p-2 flex items-center justify-center transition-all">
                                                 <p className="text-center text-sm">
                                                     Emagrecimento
                                                 </p>
-                                            </div>
+                                            </button>
 
-                                            <div className="cursor-pointer bg-white border border-gray-300 hover:bg-emerald-500 hover:border-none text-gray-800 hover:text-white md:aspect-square rounded-lg p-2 flex items-center justify-center transition-all">
+                                            <button className="cursor-pointer bg-white border border-gray-300 hover:bg-emerald-500 hover:border-none text-gray-800 hover:text-white md:aspect-square rounded-lg p-2 flex items-center justify-center transition-all">
                                                 <p className="text-center text-sm">
                                                     Manter seu peso
                                                 </p>
-                                            </div>
+                                            </button>
 
-                                            <div className="cursor-pointer bg-white border border-gray-300 hover:bg-emerald-500 hover:border-none text-gray-800 hover:text-white md:aspect-square rounded-lg p-2 flex items-center justify-center transition-all">
+                                            <button className="cursor-pointer bg-white border border-gray-300 hover:bg-emerald-500 hover:border-none text-gray-800 hover:text-white md:aspect-square rounded-lg p-2 flex items-center justify-center transition-all">
                                                 <p className="text-center text-sm">
                                                     Subir de peso
                                                 </p>
-                                            </div>
+                                            </button>
                                         </div>
                                     </div>
 
