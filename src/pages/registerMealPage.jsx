@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Search, Salad, Fish, Ham, CalendarClock } from 'lucide-react';
+import { Search, Salad, Fish, Ham, CalendarClock, CookingPot } from 'lucide-react';
 import { Sidebar } from "../components/sidebar";
 import { InputField } from "../components/inputField";
 
@@ -48,7 +48,7 @@ export function RegisterMealPage() {
 
             <div className="flex-1 mt-8 p-6 transition-all duration-300 md:ml-64">
                 <h1 className="text-2xl md:text-3xl text-gray-600 tracking-tighter font-bold">
-                    Adicionar Refeição
+                    Adicionar Refeição <CookingPot className="inline ml-2 h-7 w-7"/>
                 </h1>
                 <p className="text-gray-500 text-sm md:text-base mb-2 leading-relaxed">
                     Registre as refeições que você está consumindo durante o dia.
@@ -107,7 +107,7 @@ export function RegisterMealPage() {
                             />
                         </div>
 
-                        <button onClick={handleAddMeal} className="w-full shadow-xl py-3 px-4 text-sm font-semibold rounded-full text-white bg-emerald-500 hover:bg-emerald-600 focus:outline-none transition-all">
+                        <button onClick={handleAddMeal} className="w-full shadow-xl py-3 px-4 text-sm font-semibold rounded-full text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none transition-all">
                             Adicionar Refeição
                         </button>
                     </div>

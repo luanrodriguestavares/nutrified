@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logoEmerald from '../assets/img/logo-emerald.svg';
 import { Home, Menu, Citrus, X, Dumbbell, Banana, LogOut } from 'lucide-react';
 
 export const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
         if (isOpen) {
-            document.body.style.overflow = 'hidden'; 
+            document.body.style.overflow = 'hidden';
         } else {
-            document.body.style.overflow = ''; 
+            document.body.style.overflow = '';
         }
 
         return () => {
-            document.body.style.overflow = ''; 
+            document.body.style.overflow = '';
         };
     }, [isOpen]);
 
@@ -25,6 +26,13 @@ export const Sidebar = () => {
     const handleLogout = () => {
         console.log("Logout acionado");
     };
+
+    const getLinkClass = (path) => 
+        `relative flex flex-row items-center h-11 focus:outline-none ${
+            location.pathname === path
+                ? "bg-gray-100 text-gray-700 border-emerald-600" // estilo ativo
+                : "hover:bg-gray-100 text-gray-700 border-transparent"
+        } border-l-4 pr-6`;
 
     return (
         <div className="flex relative">
@@ -57,7 +65,7 @@ export const Sidebar = () => {
                             </div>
                         </li>
                         <li>
-                            <Link to="/dashboard" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-gray-700 border-l-4 border-transparent hover:border-emerald-600 pr-6">
+                            <Link to="/dashboard" className={getLinkClass("/dashboard")}>
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <Home className="w-5 h-5" />
                                 </span>
@@ -65,7 +73,7 @@ export const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/register-meal" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-gray-700 border-l-4 border-transparent hover:border-emerald-600 pr-6">
+                            <Link to="/register-meal" className={getLinkClass("/register-meal")}>
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <Citrus className="w-5 h-5" />
                                 </span>
@@ -73,7 +81,7 @@ export const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/meals" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-gray-700 border-l-4 border-transparent hover:border-emerald-600 pr-6">
+                            <Link to="/meal-history" className={getLinkClass("/meal-history")}>
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <Banana className="w-5 h-5" />
                                 </span>
@@ -81,11 +89,11 @@ export const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/goals" className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-gray-700 border-l-4 border-transparent hover:border-emerald-600 pr-6">
+                            <Link to="/profile" className={getLinkClass("/goals")}>
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <Dumbbell className="w-5 h-5" />
                                 </span>
-                                <span className="ml-2 text-sm truncate">Seus objetivos</span>
+                                <span className="ml-2 text-sm truncate">Seu Perfil</span>
                             </Link>
                         </li>
                     </ul>

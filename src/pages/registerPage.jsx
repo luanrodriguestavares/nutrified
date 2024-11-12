@@ -44,7 +44,7 @@ export function RegisterPage() {
                                     <InputField label="Senha" name="password" type="password" placeholder="Digite sua senha" Icon={Lock} />
 
                                     <div className="!mt-8">
-                                        <button type="button" onClick={handleNextStep} className="w-full shadow-xl py-3 px-4 text-sm rounded-full text-white bg-emerald-500 hover:bg-emerald-600 focus:outline-none transition-all">
+                                        <button type="button" onClick={handleNextStep} className="w-full shadow-xl py-3 px-4 text-sm rounded-full text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none transition-all">
                                             Próximo
                                         </button>
                                     </div>
@@ -97,7 +97,7 @@ export function RegisterPage() {
 
 
                                     <div className="!mt-8">
-                                        <button type="submit" className="w-full shadow-xl py-3 px-4 text-sm rounded-full text-white bg-emerald-500 hover:bg-emerald-600 focus:outline-none transition-all">
+                                        <button type="submit" className="w-full shadow-xl py-3 px-4 text-sm rounded-full text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none transition-all">
                                             Registrar
                                         </button>
                                     </div>

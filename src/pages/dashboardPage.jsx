@@ -2,7 +2,7 @@ import React from "react";
 import { Sidebar } from "../components/sidebar";
 import { Greeting } from "../components/greeting";
 import { CardDashboard } from "../components/cardDashboard";
-import { FoodHistoryTable } from '../components/foodHistoryTable';
+import { MealHistoryTable } from '../components/mealHistoryTable';
 import { GlassWater, Apple, History, HeartPulse } from "lucide-react";
 
 const foodData = [
@@ -60,7 +60,7 @@ export function DashboardPage() {
                         <p className="text-gray-500 text-sm md:text-base mb-6 leading-relaxed">
                             Aqui são exibidas suas ultimas 6 refeições.
                         </p>
-                        <FoodHistoryTable data={foodData} />
+                        <MealHistoryTable data={foodData} page="dashboard" />
                     </div>
                 </div>
 
