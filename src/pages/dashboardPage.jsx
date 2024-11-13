@@ -6,12 +6,12 @@ import { MealHistoryTable } from '../components/mealHistoryTable';
 import { GlassWater, Apple, History, HeartPulse } from "lucide-react";
 
 const foodData = [
-    { food: "Banana", calories: 90, time: "08:30" },
-    { food: "Sanduíche", calories: 250, time: "12:00" },
-    { food: "Suco de Laranja", calories: 80, time: "15:00" },
-    { food: "Suco de Manga", calories: 80, time: "15:00" },
-    { food: "Suco de Uva", calories: 80, time: "15:00" },
-    { food: "Arroz, Bife e Salada", calories: 80, time: "15:00" }
+    { food: "Banana", calories: 90, time: "2024-11-13T08:30:00" },
+    { food: "Sanduíche", calories: 250, time: "2024-11-13T12:00:00" },
+    { food: "Suco de Laranja", calories: 80, time: "2024-11-13T15:00:00" },
+    { food: "Suco de Manga", calories: 80, time: "2024-11-13T15:00:00" },
+    { food: "Suco de Uva", calories: 80, time: "2024-11-13T15:00:00" },
+    { food: "Arroz, Bife e Salada", calories: 80, time: "2024-11-13T15:00:00" }
 ];
 
 export function DashboardPage() {
@@ -32,7 +32,7 @@ export function DashboardPage() {
                         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                             <CardDashboard
                                 title="Calorias Consumidas"
-                                value={2500}
+                                value={8000}
                                 goal={3000}
                                 color="bg-emerald-500"
                                 Icon={Apple}
@@ -63,8 +63,6 @@ export function DashboardPage() {
                         <MealHistoryTable data={foodData} page="dashboard" />
                     </div>
                 </div>
-
-
             </div>
         </div>
         

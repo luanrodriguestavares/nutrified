@@ -27,12 +27,15 @@ export const Sidebar = () => {
         console.log("Logout acionado");
     };
 
-    const getLinkClass = (path) => 
-        `relative flex flex-row items-center h-11 focus:outline-none ${
-            location.pathname === path
-                ? "bg-gray-100 text-gray-700 border-emerald-600" 
-                : "hover:bg-gray-100 text-gray-700 border-transparent"
+
+    const getLinkClass = (path) => {
+        const location = useLocation();
+        const isActive = location.pathname === path || (path === "/dashboard" && location.pathname === "/");
+    
+        return `relative flex flex-row items-center h-11 focus:outline-none ${
+            isActive ? "bg-gray-100 text-gray-700 border-emerald-600" : "hover:bg-gray-100 text-gray-700 border-transparent"
         } border-l-4 pr-6`;
+    };
 
     return (
         <div className="flex relative">
