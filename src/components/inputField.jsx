@@ -6,17 +6,23 @@ export function InputField({ label, name, type, placeholder, Icon, options = [] 
     const inputRef = useRef(null); 
     const optionsRef = useRef(null); 
 
+
+    // Filtra as opções com base no filtro atual
     const filteredOptions = filter
         ? options.filter((option) =>
               option.label.toLowerCase().includes(filter.toLowerCase())
           )
         : options; 
 
+
+    // Função para selecionar uma opção e fechar o dropdown
     const handleSelect = (value) => {
         setFilter(value);
         setIsOpen(false); 
     };
 
+
+    // Fecha o dropdown ao clicar fora dele
     const handleClickOutside = (e) => {
         if (
             inputRef.current && !inputRef.current.contains(e.target) &&
@@ -26,6 +32,8 @@ export function InputField({ label, name, type, placeholder, Icon, options = [] 
         }
     };
 
+
+    // Adiciona e remove o ouvinte de evento para detectar cliques fora
     useEffect(() => {
         document.addEventListener("click", handleClickOutside);
 
@@ -40,11 +48,7 @@ export function InputField({ label, name, type, placeholder, Icon, options = [] 
             <div className="relative flex items-center">
                 {type === "select" ? (
                     <>
-                        <input
-                            ref={inputRef}
-                            type="text"
-                            value={filter}
-                            onChange={(e) => {
+                        <input ref={inputRef} type="text" value={filter} onChange={(e) => {
                                 setFilter(e.target.value);
                                 setIsOpen(true);
                             }}

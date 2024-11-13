@@ -3,6 +3,7 @@ import { Search, Salad, Fish, Ham, CalendarClock, CookingPot } from 'lucide-reac
 import { Sidebar } from "../components/sidebar";
 import { InputField } from "../components/inputField";
 
+
 const options = [
     { value: "1", label: "Opção 1" },
     { value: "2", label: "Opção 2" },
@@ -11,6 +12,7 @@ const options = [
     { value: "5", label: "Opção 5" },
 ];
 
+
 export function RegisterMealPage() {
     const [selectedFood, setSelectedFood] = useState("");
     const [quantity, setQuantity] = useState(1);
@@ -18,18 +20,26 @@ export function RegisterMealPage() {
     const [mealHistory, setMealHistory] = useState([]);
     const [totalCalories, setTotalCalories] = useState(0);
 
+
+    // Função para lidar com a mudança do alimento selecionado
     const handleFoodChange = (e) => {
         setSelectedFood(e.target.value);
     };
 
+
+    // Função para lidar com a mudança da quantidade
     const handleQuantityChange = (e) => {
         setQuantity(e.target.value);
     };
 
+
+    // Função para lidar com a mudança das calorias
     const handleCaloriesChange = (e) => {
         setCalories(e.target.value);
     };
 
+
+    // Função para adicionar a refeição ao histórico
     const handleAddMeal = () => {
         const foodItem = options.find((item) => item.label === selectedFood);
         if (foodItem) {

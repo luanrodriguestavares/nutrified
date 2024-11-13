@@ -7,6 +7,8 @@ export const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
 
+
+    // Efeito para bloquear/desbloquear o scroll da página quando a sidebar estiver aberta
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
@@ -19,23 +21,28 @@ export const Sidebar = () => {
         };
     }, [isOpen]);
 
+
+    // Função para fechar a sidebar
     const handleCloseSidebar = () => {
         setIsOpen(false);
     };
 
+
+    // Função para tratar o logout (ainda sem lógica real)
     const handleLogout = () => {
         console.log("Logout acionado");
     };
 
 
+    // Função para determinar a classe CSS de cada link
     const getLinkClass = (path) => {
         const location = useLocation();
         const isActive = location.pathname === path || (path === "/dashboard" && location.pathname === "/");
-    
         return `relative flex flex-row items-center h-11 focus:outline-none ${
             isActive ? "bg-gray-100 text-gray-700 border-emerald-600" : "hover:bg-gray-100 text-gray-700 border-transparent"
         } border-l-4 pr-6`;
     };
+
 
     return (
         <div className="flex relative">

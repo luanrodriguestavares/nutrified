@@ -8,10 +8,14 @@ import art from "../assets/img/art.svg";
 export function RegisterPage() {
     const [step, setStep] = useState(1);
 
+
+    // Função para lidar com a mudança de pagina
     const handleNextStep = () => {
         setStep(2);
     };
 
+
+    // Função para lidar com o envio do formulário
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Formulário enviado!");
@@ -59,7 +63,7 @@ export function RegisterPage() {
                                     </div>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <InputField label="Altura" name="height" type="number" placeholder="Digite sua altura (em cm)" Icon={Ruler} />
-                                        <InputField label="Genero" name="gender" type="select" placeholder="Selecione seu genero" Icon={ChevronDown} 
+                                        <InputField label="Genero" name="gender" type="select" placeholder="Selecione seu genero" Icon={ChevronDown}
                                             options={[
                                                 { value: "man", label: "Homem" },
                                                 { value: "woman", label: "Mulher" },
@@ -67,8 +71,8 @@ export function RegisterPage() {
                                             ]}
                                         />
                                     </div>
-                                    
-                                    
+
+
                                     <div className="!mt-6">
                                         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                                             <label className="text-gray-800 text-sm block col-span-1 md:col-span-3">
@@ -114,7 +118,7 @@ export function RegisterPage() {
                     </div>
 
                     <div className="lg:h-[500px] md:h-[500px] mt-8 md:mt-0">
-                        <img src={art} className="w-full h-full max-md:w-4/5 mx-auto"/>
+                        <img src={art} className="w-full h-full max-md:w-4/5 mx-auto" />
                     </div>
 
                 </div>

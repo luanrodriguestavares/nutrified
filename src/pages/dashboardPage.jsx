@@ -3,16 +3,8 @@ import { Sidebar } from "../components/sidebar";
 import { Greeting } from "../components/greeting";
 import { CardDashboard } from "../components/cardDashboard";
 import { MealHistoryTable } from '../components/mealHistoryTable';
+import { foodData } from "../data/foodData";
 import { GlassWater, Apple, History, HeartPulse } from "lucide-react";
-
-const foodData = [
-    { food: "Banana", calories: 90, time: "2024-11-13T08:30:00" },
-    { food: "Sanduíche", calories: 250, time: "2024-11-13T12:00:00" },
-    { food: "Suco de Laranja", calories: 80, time: "2024-11-13T15:00:00" },
-    { food: "Suco de Manga", calories: 80, time: "2024-11-13T15:00:00" },
-    { food: "Suco de Uva", calories: 80, time: "2024-11-13T15:00:00" },
-    { food: "Arroz, Bife e Salada", calories: 80, time: "2024-11-13T15:00:00" }
-];
 
 export function DashboardPage() {
     return (

@@ -4,20 +4,31 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 export function MealHistoryTable({ data, page }) {
     const isDashboard = page === 'dashboard';
     const [currentPage, setCurrentPage] = useState(0);
-
     const itemsPerPage = isDashboard ? 6 : 10;
+
+
+    // Ordena os dados do mais recente ao mais antigo
+    const sortedData = [...data].sort((a, b) => new Date(b.time) - new Date(a.time));
+
+
+    // Paginação dos dados com base no número de itens por página
     const paginatedData = isDashboard 
-        ? data.slice(0, itemsPerPage)
-        : data.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
+        ? sortedData.slice(0, itemsPerPage)
+        : sortedData.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
 
-    const handlePrevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 0));
 
+    // Função para avançar para a próxima página
     const handleNextPage = () => {
-        const maxPage = Math.ceil(data.length / itemsPerPage) - 1;
+        const maxPage = Math.ceil(sortedData.length / itemsPerPage) - 1;
         setCurrentPage((prev) => Math.min(prev + 1, maxPage));
     };
 
-    // Função para formatar a data e hora
+
+    // Função para voltar para a página anterior
+    const handlePrevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 0));
+
+    
+    // Função para formatar a data e hora em formato legível
     const formatDateTime = (dateTime) => {
         const date = new Date(dateTime);
         return new Intl.DateTimeFormat('pt-BR', {
@@ -59,9 +70,9 @@ export function MealHistoryTable({ data, page }) {
                         <ChevronLeft className="w-5 h-5" />
                     </button>
                     <span className="text-sm">
-                        Página {currentPage + 1} de {Math.ceil(data.length / itemsPerPage)}
+                        Página {currentPage + 1} de {Math.ceil(sortedData.length / itemsPerPage)}
                     </span>
-                    <button onClick={handleNextPage} disabled={(currentPage + 1) * itemsPerPage >= data.length} className="p-2 rounded-full bg-gray-50 hover:bg-gray-300 border border-gray-200 disabled:opacity-0">
+                    <button onClick={handleNextPage} disabled={(currentPage + 1) * itemsPerPage >= sortedData.length} className="p-2 rounded-full bg-gray-50 hover:bg-gray-300 border border-gray-200 disabled:opacity-0">
                         <ChevronRight className="w-5 h-5" />
                     </button>
                 </div>

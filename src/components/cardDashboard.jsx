@@ -5,13 +5,27 @@ import { TriangleAlert } from 'lucide-react';
 export function CardDashboard({ title, value, goal, color, Icon, type }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+
+    // Calcula a porcentagem
     const percentage = (value / goal) * 100;
+
+
+    // Verifica se o objetivo foi atingido
     const isOverGoal = value > goal;
+
+
+    // Calcula a quantidade restante
     const remaining = goal - value > 0 ? goal - value : 0;
+
+
+    // Unidades de medidas 
     const unit = type === 'water' ? 'ml' : type === 'food' ? 'kcal' : '';
 
+
+    // Abre e fecha o modal de relatório
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
+
 
     return (
         <>
@@ -45,16 +59,16 @@ export function CardDashboard({ title, value, goal, color, Icon, type }) {
                 </div>
             </div>
 
-            <ReportModal 
-                isOpen={isModalOpen} 
-                onRequestClose={closeModal} 
-                title={title} 
-                value={value} 
-                goal={goal} 
-                remaining={remaining} 
-                percentage={percentage} 
-                unit={unit} 
-                isOverGoal={isOverGoal} 
+            <ReportModal
+                isOpen={isModalOpen}
+                onRequestClose={closeModal}
+                title={title}
+                value={value}
+                goal={goal}
+                remaining={remaining}
+                percentage={percentage}
+                unit={unit}
+                isOverGoal={isOverGoal}
             />
         </>
     );
