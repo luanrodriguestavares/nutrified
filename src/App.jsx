@@ -4,6 +4,7 @@ import { RegisterPage } from "./pages/registerPage";
 import { DashboardPage } from "./pages/dashboardPage";
 import { RegisterMealPage } from "./pages/registerMealPage";
 import { MealHistoryPage } from './pages/mealHistoryPage';
+import { UserProfilePage } from './pages/userProfilePage';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                         <Route path="/dashboard" element={<DashboardPage />} />
                         <Route path="/register-meal" element={<RegisterMealPage />} />
                         <Route path="/meal-history" element={<MealHistoryPage />} />
+                        <Route path="/user-profile" element={<UserProfilePage />} />
                         <Route path="/" element={<DashboardPage />} />
                     </Routes>
                 </div>

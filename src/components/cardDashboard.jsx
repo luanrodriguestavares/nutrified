@@ -38,7 +38,7 @@ export function CardDashboard({ title, value, goal, color, Icon, type }) {
                             </span>
                         </div>
                         <div className="flex-1 pl-1">
-                            <div className="text-lg md:text-xl font-medium text-gray-600">
+                            <div className="text-md md:text-xl font-medium text-gray-600">
                                 {value} {unit} &gt; {goal} {unit} {isOverGoal && <TriangleAlert className="inline" />}
                             </div>
                             <div className="text-xs text-gray-400 sm:text-sm">

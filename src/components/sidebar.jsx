@@ -95,7 +95,7 @@ export const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/profile" className={getLinkClass("/goals")}>
+                            <Link to="/user-profile" className={getLinkClass("/user-profile")}>
                                 <span className="inline-flex justify-center items-center ml-4">
                                     <Dumbbell className="w-5 h-5" />
                                 </span>

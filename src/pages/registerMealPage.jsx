@@ -15,7 +15,7 @@ const options = [
 
 export function RegisterMealPage() {
     const [selectedFood, setSelectedFood] = useState("");
-    const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState(0);
     const [calories, setCalories] = useState(0);
     const [mealHistory, setMealHistory] = useState([]);
     const [totalCalories, setTotalCalories] = useState(0);
@@ -82,7 +82,7 @@ export function RegisterMealPage() {
                                 name="quantidade"
                                 type="number"
                                 placeholder="Quantidade"
-                                value={quantity}
+                                value={quantity || ""}
                                 onChange={handleQuantityChange}
                                 Icon={Salad}
                             />
@@ -91,7 +91,7 @@ export function RegisterMealPage() {
                                 name="calorias"
                                 type="number"
                                 placeholder="Calorias por porção"
-                                value={calories}
+                                value={calories || ""}
                                 onChange={handleCaloriesChange}
                                 Icon={Fish}
                             />
@@ -102,7 +102,7 @@ export function RegisterMealPage() {
                                 name="calorias"
                                 type="number"
                                 placeholder="Calorias Totais"
-                                value={calories}
+                                value={calories || ""}
                                 onChange={handleCaloriesChange}
                                 Icon={Ham}
                             />
@@ -111,7 +111,7 @@ export function RegisterMealPage() {
                                 name="datetime"
                                 type="number"
                                 placeholder="dd/mm/aaaa hh:mm:ss"
-                                value={calories}
+                                value={calories || ""}
                                 onChange={handleCaloriesChange}
                                 Icon={CalendarClock}
                             />
